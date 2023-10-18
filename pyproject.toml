@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "automotive-classifieds-data-collector"
+version = "0.1.0"
+description = "Automotive classfieds scraper and aggregator"
+authors = ["Karol Wiliwis <karol.wiliwis@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mypy = "^1.6.0"
+black = "^23.9.1"
+isort = "^5.12.0"
+pydantic = "^2.4.2"
+dacite = "^1.8.1"
+requests = "^2.31.0"
+backoff = "^2.2.1"
+invoke = "^2.2.0"
+invoke-common-tasks = "^0.4.0"
+bs4 = "^0.0.1"
+sqlalchemy = "^2.0.22"
+pyupgrade = "^3.15.0"
+flake8 = "^6.1.0"
+asyncpg = "^0.28.0"
+alembic = "^1.12.0"
+types-requests = "^2.31.0.10"
+types-beautifulsoup4 = "^4.12.0.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

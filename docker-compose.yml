@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: data-collector-container
+    volumes:
+      - ./output:/var/log/app/output/
+    ports:
+      - "8008:8008"

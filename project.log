@@ -1,0 +1,87 @@
+2023-10-18 23:54:43,297 [INFO] __main__: Running...
+2023-10-18 23:54:43,297 [INFO] src.main: Scraping labeling data
+2023-10-18 23:54:43,628 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/423-Alfa-Romeo?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:54:44,605 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/424-Audi?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:54:51,727 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/425-BMW?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:54:59,827 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/426-Chevrolet?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:00,602 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/500-Chrysler?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:01,296 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/427-Citroen?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:04,116 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/428-Daewoo?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:04,416 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/429-Dodge?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:05,141 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/432-Fiat?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:06,303 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/433-Ford?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:11,892 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/464-Honda?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:13,333 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/509-Hyundai?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:15,261 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/434-Jaguar?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:15,701 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/435-Jeep?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:16,600 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/436-Kia?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:18,262 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/437-Lexus?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:19,167 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/438-Mazda?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:22,020 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/439-Mercedes?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:25,766 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/440-Mitsubishi?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:26,709 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/441-Nissan?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:28,141 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/442-Opel?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:30,700 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/443-Peugeot?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:33,724 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/444-Renault?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:36,835 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/445-Rover?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:37,131 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/446-Saab?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:37,830 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/447-Seat?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:39,325 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/448-Subaru?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:40,247 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/449-Suzuki?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:41,897 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/450-Škoda?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:44,645 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/466-Toyota?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:49,625 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/451-Volkswagen?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:55:57,156 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/452-Volvo?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:56:00,043 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/453-Inny?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-18 23:56:02,806 [INFO] src.main: Scraping offer data
+2023-10-18 23:56:10,419 [INFO] src.raw_offer_producer.olx: Found 1622 in category_id: 181
+2023-10-18 23:56:17,917 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 182
+2023-10-18 23:56:25,218 [INFO] src.raw_offer_producer.olx: Found 1624 in category_id: 183
+2023-10-18 23:56:32,702 [INFO] src.raw_offer_producer.olx: Found 1622 in category_id: 184
+2023-10-18 23:56:39,930 [INFO] src.raw_offer_producer.olx: Found 1620 in category_id: 185
+2023-10-18 23:56:47,671 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 186
+2023-10-18 23:56:52,559 [INFO] src.raw_offer_producer.olx: Found 482 in category_id: 187
+2023-10-18 23:56:59,829 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 188
+2023-10-18 23:57:07,330 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 189
+2023-10-18 23:57:14,758 [INFO] src.raw_offer_producer.olx: Found 1624 in category_id: 190
+2023-10-18 23:57:22,379 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 191
+2023-10-18 23:57:30,097 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 192
+2023-10-18 23:57:35,062 [INFO] src.raw_offer_producer.olx: Found 495 in category_id: 193
+2023-10-18 23:57:42,498 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 194
+2023-10-18 23:57:49,894 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 195
+2023-10-18 23:57:57,326 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 196
+2023-10-18 23:58:04,863 [INFO] src.raw_offer_producer.olx: Found 1624 in category_id: 197
+2023-10-18 23:58:12,421 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 198
+2023-10-18 23:58:19,865 [INFO] src.raw_offer_producer.olx: Found 1624 in category_id: 199
+2023-10-18 23:58:27,270 [INFO] src.raw_offer_producer.olx: Found 1623 in category_id: 200
+2023-10-18 23:58:33,081 [INFO] src.raw_offer_producer.olx: Found 957 in category_id: 201
+2023-10-18 23:58:40,338 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 202
+2023-10-18 23:58:47,490 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 203
+2023-10-18 23:58:54,959 [INFO] src.raw_offer_producer.olx: Found 1618 in category_id: 204
+2023-10-18 23:59:02,684 [INFO] src.raw_offer_producer.olx: Found 1622 in category_id: 205
+2023-10-18 23:59:10,461 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 206
+2023-10-18 23:59:18,112 [INFO] src.raw_offer_producer.olx: Found 1625 in category_id: 207
+2023-10-18 23:59:26,030 [INFO] src.raw_offer_producer.olx: Found 1624 in category_id: 208
+2023-10-18 23:59:30,075 [INFO] src.raw_offer_producer.olx: Found 145 in category_id: 296
+2023-10-18 23:59:37,465 [INFO] src.raw_offer_producer.olx: Found 1622 in category_id: 1219
+2023-10-18 23:59:45,563 [INFO] src.raw_offer_producer.olx: Found 1624 in category_id: 1221
+2023-10-18 23:59:50,818 [INFO] src.raw_offer_producer.olx: Found 311 in category_id: 1257
+2023-10-18 23:59:56,670 [INFO] src.raw_offer_producer.olx: Found 748 in category_id: 1337
+2023-10-19 00:00:04,902 [INFO] src.raw_offer_producer.olx: Found 1624 in category_id: 1339
+2023-10-19 00:00:14,143 [INFO] src.raw_offer_producer.olx: Found 1623 in category_id: 1341
+2023-10-19 00:00:23,009 [INFO] src.raw_offer_producer.olx: Found 1621 in category_id: 1343
+2023-10-19 00:00:35,186 [INFO] src.raw_offer_producer.olx: Found 1622 in category_id: 1345
+2023-10-19 00:00:42,911 [INFO] src.raw_offer_producer.olx: Found 1621 in category_id: 1347
+2023-10-19 00:00:47,980 [INFO] src.raw_offer_producer.olx: Found 381 in category_id: 1349
+2023-10-19 00:00:55,509 [INFO] src.raw_offer_producer.olx: Found 1620 in category_id: 1351
+2023-10-19 00:01:00,025 [INFO] src.raw_offer_producer.olx: Found 335 in category_id: 1353
+2023-10-19 00:01:04,539 [INFO] src.raw_offer_producer.olx: Found 429 in category_id: 1554
+2023-10-19 00:01:08,757 [INFO] src.raw_offer_producer.olx: Found 332 in category_id: 1556
+2023-10-19 00:01:13,725 [INFO] src.raw_offer_producer.olx: Found 515 in category_id: 1558
+2023-10-19 00:01:13,897 [INFO] src.main: Saving labeling data
+2023-10-19 00:01:13,913 [INFO] src.main: Saving offer data
+2023-10-19 00:01:22,336 [INFO] __main__: Done!
+2023-10-19 00:51:54,499 [INFO] __main__: Running...
+2023-10-19 00:51:54,499 [INFO] src.main: Scraping labeling data
+2023-10-19 00:51:54,889 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/423-Alfa-Romeo?s=6240bd697e7f1ba182eec7584f239e6d
+2023-10-19 00:51:55,887 [INFO] src.raw_offer_producer.bezwypadkowe_net: Parsing brand forumdisplay.php/424-Audi?s=6240bd697e7f1ba182eec7584f239e6d
