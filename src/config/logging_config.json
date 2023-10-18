@@ -10,7 +10,7 @@
         "file": {
             "level": "INFO",
             "class": "logging.FileHandler",
-            "filename": "output/project.log",
+            "filename": "project.log",
             "formatter": "standard"
         }
     },

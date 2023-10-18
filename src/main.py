@@ -25,14 +25,14 @@ async def process():
 
     # TODO: save offers to database
     logger.info("Saving labeling data")
-    with open("output/labeling_data.csv", mode="w", newline="", encoding="utf-8") as file:
+    with open("labeling_data.csv", mode="w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
         writer.writerow(["VIN"])
         for vin in vins:
             writer.writerow([vin.vin])
 
     logger.info("Saving offer data")
-    with open("output/offers.csv", mode="w", newline="", encoding="utf-8") as file:
+    with open("offers.csv", mode="w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
         writer.writerow(
             [
