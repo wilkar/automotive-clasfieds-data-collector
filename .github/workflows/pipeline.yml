@@ -15,4 +15,4 @@ jobs:
     - name: Run black
       run: docker run data-app poetry run black . --check
     - name: Run tests
-      run: docker run data-app poetry run pytest tests/
+      run: docker run data-app poetry run pytest
