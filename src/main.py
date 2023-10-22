@@ -4,6 +4,7 @@ from datetime import datetime
 
 from src.raw_offer_producer.bezwypadkowe_net import BezwypadkoweTrainingDataProducer
 from src.raw_offer_producer.olx import OlxRawOfferProducer
+from src.raw_offer_producer.otomoto import OtomotoRawOfferProducer
 
 from .config import log_init
 
@@ -14,14 +15,20 @@ logger = logging.getLogger(__name__)
 
 # TODO: do full async implementation
 async def process():
-    raw_offer_producer = OlxRawOfferProducer()
+    olx_raw_offer_producer = OlxRawOfferProducer()
     training_data_producer = BezwypadkoweTrainingDataProducer()
+    otomoto_raw_offer_producer = OtomotoRawOfferProducer()
 
     logger.info("Scraping labeling data")
     vins = list(training_data_producer.get_offers())
 
-    logger.info("Scraping offer data")
-    offers = list(raw_offer_producer.get_offers())
+    logger.info("Scraping offer data from Olx data")
+    olx_offers = list(olx_raw_offer_producer.get_offers())
+
+    logger.info("Scraping offer data from Otomoto")
+    otomoto_offers = list(olx_raw_offer_producer.get_offers())
+
+    offers = olx_offers + otomoto_offers
 
     # TODO: save offers to database
     logger.info("Saving labeling data")
@@ -63,14 +70,6 @@ async def process():
             logger.info(f"Saving offer {offer.id}")
             datetime_object = datetime.fromisoformat(offer.created_time)
             datetime_object = datetime_object.replace(tzinfo=None)
-            price_str = offer.parameters[0].price[:-2].replace(" ", "")
-            price_int = (
-                None
-                if price_str.isalpha()
-                else round(int(float(price_str.replace(",", "."))))
-            )
-            milage_str = offer.parameters[0].milage[:-2].replace(" ", "")
-            milage_int = None if milage_str.isalpha() else int(milage_str)
             writer.writerow(
                 [
                     offer.brand,
@@ -83,12 +82,12 @@ async def process():
                     offer.location[0].region,
                     offer.location[0].city,
                     offer.parameters[0].model,
-                    price_int,
+                    offer.parameters[0].price,
                     offer.parameters[0].engine_size,
                     offer.parameters[0].manufactured_year,
                     offer.parameters[0].petrol,
                     offer.parameters[0].car_body,
-                    milage_int,
+                    offer.parameters[0].milage,
                     offer.parameters[0].color,
                     offer.parameters[0].condition,
                     offer.parameters[0].transmission,

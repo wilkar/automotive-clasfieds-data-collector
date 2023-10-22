@@ -32,6 +32,12 @@ class OlxRawOfferProducer(BaseRawOfferProducer):
         self.olx_api_pagination_limit = olx_api_pagination_limit
         self.olx_api_offset = olx_api_offset
 
+    # TODO: handle duplicates
+    def get_offers(self) -> Iterator[RawOffer]:
+        for category in self.olx_categories:
+            for offer in self._get_all_offers_from_category(category):
+                yield self._map_offers(offer)
+
     def _olx_api_url_builder(self, page: int, category_id: int) -> str:
         offset = page * self.olx_api_offset
         url = f"{self.olx_api_url}?offset={offset}&limit={self.olx_api_limit}&category_id={category_id}"
@@ -89,13 +95,7 @@ class OlxRawOfferProducer(BaseRawOfferProducer):
             for param in offer.get("params", [])
         }
         params_defaults = {
-            key: params.get(key, "None")
+            key: params.get(key, None)
             for key in RawOfferParameters.__annotations__.keys()
         }
         return from_dict(data_class=RawOfferParameters, data=params_defaults)
-
-    # TODO: handle duplicates
-    def get_offers(self) -> Iterator[RawOffer]:
-        for category in self.olx_categories:
-            for offer in self._get_all_offers_from_category(category):
-                yield self._map_offers(offer)

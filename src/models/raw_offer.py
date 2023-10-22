@@ -4,13 +4,13 @@ from datetime import datetime
 
 @dataclass(frozen=True, kw_only=True)
 class RawOfferLocation:
-    region: str
-    city: str
+    region: str | None
+    city: str | None
 
 
 @dataclass(frozen=True, kw_only=True)
 class RawOfferParameters:
-    model: str  # enum
+    model: str | None  # enum
     price: str | None  # convert to Int and append currency #bi
     engine_size: str | None  # convert to Int and appent unit
     manufactured_year: str | None
