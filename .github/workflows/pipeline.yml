@@ -9,8 +9,8 @@ jobs:
    steps:
      - uses: actions/checkout@v3
      - name: Run isort
-       run: docker run data-app poetry run isort . --check --profile=black
+       run:  poetry run isort . --check --profile=black
      - name: Run black
-       run: docker run data-app poetry run black . --check
+       run: poetry run black . --check
      - name: Run tests
-       run: docker run data-app poetry run pytest tests/
+       run: poetry run pytest tests/
