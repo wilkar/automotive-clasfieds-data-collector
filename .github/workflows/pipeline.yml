@@ -9,7 +9,7 @@ jobs:
    steps:
     - uses: actions/checkout@v3
     - name: Build Docker image
-      run: docker build app .
+      run: docker build -t app .
     - name: Run isort
       run: docker run app poetry run isort . --check --profile=black
     - name: Run black
