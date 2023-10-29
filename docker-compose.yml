@@ -11,6 +11,8 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
   app:
+    depends_on:
+       - db
     build:
       context: .
       dockerfile: Dockerfile
