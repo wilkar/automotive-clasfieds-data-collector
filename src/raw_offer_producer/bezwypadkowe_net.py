@@ -5,12 +5,15 @@ from typing import Iterator
 import requests
 from bs4 import BeautifulSoup
 
+from src.config import log_init
 from src.config.bezwypadkowe_net_config import (
     BEZWYPADKOWE_MAIN_URL,
     BEZWYPADKOWE_STARTING_POINT,
 )
 from src.models.labeling import TrainingData
 from src.raw_offer_producer.base import BaseRawOfferProducer
+
+log_init.setup_logging()
 
 logger = logging.getLogger(__name__)
 

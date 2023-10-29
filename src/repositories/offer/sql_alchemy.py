@@ -3,13 +3,13 @@ import datetime
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncEngine
 
-from src.entrypoints.create_db import get_engine
 from src.models.db_schema import (
     labeling_data,
     offer_location,
     offers_base,
     offers_details,
 )
+from src.repositories.helpers import get_engine
 from src.repositories.offer.base import OfferRepository
 
 

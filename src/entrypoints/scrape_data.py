@@ -1,6 +1,10 @@
 import asyncio
 import logging
 
+from src.config import log_init
+
+log_init.setup_logging()
+
 logger = logging.getLogger(__name__)
 from src.main import process
 

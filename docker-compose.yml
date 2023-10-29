@@ -1,5 +1,15 @@
 version: '3'
 services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: acdc_user
+      POSTGRES_PASSWORD: acdc_password
+      POSTGRES_DB: acdc_database
+    ports:
+      - "5440:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
   app:
     build:
       context: .
@@ -9,3 +19,5 @@ services:
       - ./output:/var/log/app/output/
     ports:
       - "8008:8008"
+volumes:
+  pgdata:

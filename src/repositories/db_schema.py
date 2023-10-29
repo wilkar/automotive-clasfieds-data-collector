@@ -15,7 +15,7 @@ metadata_obj = MetaData()
 offers_base = Table(
     "offers_base",
     metadata_obj,
-    Column("id", Integer, Identity(start=0, cycle=True), primary_key=True),
+    Column("id", Integer, Identity(start=1, cycle=True), primary_key=True),
     Column("brand", String, nullable=False),
     Column("clasfieds_id", Integer, nullable=False),
     Column("link", String, nullable=False),
@@ -25,13 +25,13 @@ offers_base = Table(
     Column("image_links", JSON, nullable=True),
     Column("vin", String, nullable=True),
     Column("scraperd_time", DateTime, nullable=True),
-    UniqueConstraint("clasfieds_id", name="clasfieds_id"),
+    UniqueConstraint("clasfieds_id", name="uc_clasfieds_id_offer_base"),
 )
 
 offers_details = Table(
     "offers_details",
     metadata_obj,
-    Column("id", Integer, Identity(start=0, cycle=True), primary_key=True),
+    Column("id", Integer, Identity(start=1, cycle=True), primary_key=True),
     Column("clasfieds_id", Integer, nullable=False),
     Column("model", String, nullable=True),
     Column("price", BigInteger, nullable=True),
@@ -47,22 +47,22 @@ offers_details = Table(
     Column("drive", String, nullable=True),
     Column("country_origin", String, nullable=True),
     Column("righthanddrive", String, nullable=True),
-    UniqueConstraint("clasfieds_id", name="clasfieds_id"),
+    UniqueConstraint("clasfieds_id", name="uc_clasfieds_id_offers_details"),
 )
 
 offer_location = Table(
     "offer_location",
     metadata_obj,
-    Column("id", Integer, Identity(start=0, cycle=True), primary_key=True),
+    Column("id", Integer, Identity(start=1, cycle=True), primary_key=True),
     Column("clasfieds_id", Integer, nullable=False),
     Column("region", String, nullable=True),
     Column("city", String, nullable=True),
-    UniqueConstraint("clasfieds_id", name="clasfieds_id"),
+    UniqueConstraint("clasfieds_id", name="uc_clasfieds_id_offer_location"),
 )
 labeling_data = Table(
     "labeling_data",
     metadata_obj,
-    Column("id", Integer, Identity(start=0, cycle=True), primary_key=True),
+    Column("id", Integer, Identity(start=1, cycle=True), primary_key=True),
     Column("vin", String, nullable=False),
-    UniqueConstraint("vin", name="vin"),
+    UniqueConstraint("vin", name="uc_vin"),
 )

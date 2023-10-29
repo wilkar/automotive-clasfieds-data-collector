@@ -1,8 +1,12 @@
 import os
-from distutils.util import strtobool
+from pathlib import Path
 
-DEVELOPMENT = bool(strtobool(os.getenv("DEVELOPMENT", "false")))
-DEBUG_LOG = bool(strtobool(os.getenv("DEBUG_LOG", str(DEVELOPMENT))))
+from src.env import env_bool
+
+SRC_DIR = Path(__file__).resolve().parent.parent
+
+DEVELOPMENT = env_bool("DEVELOPMENT", default_value=False)
+DEBUG_LOG = env_bool("DEBUG_LOG", default_value=DEVELOPMENT)
 DB_URL = os.environ.get(
-    "DB_URL", "postgresql+asyncpg://postgres:postgres@postgres:5432/data_app_db"
+    "DB_URL", "postgresql+asyncpg://acdc_user:acdc_password@db:5432/acdc_database"
 )

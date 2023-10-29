@@ -2,11 +2,10 @@ import csv
 import logging
 from datetime import datetime
 
+from src.config import log_init
 from src.raw_offer_producer.bezwypadkowe_net import BezwypadkoweTrainingDataProducer
 from src.raw_offer_producer.olx import OlxRawOfferProducer
 from src.raw_offer_producer.otomoto import OtomotoRawOfferProducer
-
-from .config import log_init
 
 log_init.setup_logging()
 
@@ -25,10 +24,11 @@ async def process():
     logger.info("Scraping offer data from Olx data")
     olx_offers = list(olx_raw_offer_producer.get_offers())
 
-    logger.info("Scraping offer data from Otomoto")
-    otomoto_offers = list(olx_raw_offer_producer.get_offers())
+    # logger.info("Scraping offer data from Otomoto")
+    # otomoto_offers = list(otomoto_raw_offer_producer.get_offers())
 
-    offers = olx_offers + otomoto_offers
+    # offers = olx_offers + otomoto_offers
+    offers = olx_offers
 
     # TODO: save offers to database
     logger.info("Saving labeling data")

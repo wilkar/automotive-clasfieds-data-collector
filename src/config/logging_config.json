@@ -7,18 +7,43 @@
         }
     },
     "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "standard",
+            "stream": "ext://sys.stdout"
+        },
         "file": {
             "level": "INFO",
             "class": "logging.FileHandler",
             "filename": "project.log",
             "formatter": "standard"
+        },
+        "gunicorn_access": {
+            "class": "logging.StreamHandler",
+            "formatter": "standard",
+            "stream": "ext://sys.stdout"
+        },
+        "gunicorn_error": {
+            "class": "logging.StreamHandler",
+            "formatter": "standard",
+            "stream": "ext://sys.stderr"
         }
     },
     "loggers": {
-        "": {
-            "handlers": ["file"],
+        "root": {
+            "handlers": ["console", "file"],
+            "level": "INFO"
+        },
+        "gunicorn.access": {
+            "handlers": ["gunicorn_access"],
             "level": "INFO",
-            "propagate": true
+            "propagate": false
+        },
+        "gunicorn.error": {
+            "handlers": ["gunicorn_error"],
+            "level": "ERROR",
+            "propagate": false
         }
     }
 }

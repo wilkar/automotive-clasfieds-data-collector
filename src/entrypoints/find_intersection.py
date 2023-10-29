@@ -1,4 +1,11 @@
 import csv
+import logging
+
+from src.config import log_init
+
+log_init.setup_logging()
+
+logger = logging.getLogger(__name__)
 
 
 def find_common_vins(labeling_data_file, offers_file) -> tuple[int, set[str], int, int]:
@@ -12,14 +19,14 @@ def find_common_vins(labeling_data_file, offers_file) -> tuple[int, set[str], in
         next(reader, None)
         offers_vins: list = []
         for row in reader:
-            if row[6] != "[None]":
+            if row[6] != None:
                 clean_vin = (
                     row[6]
                     .replace("[", "")
                     .replace("]", "")
                     .replace(" ", "")
                     .replace("'", "")
-                )
+                )  # not needed
                 offers_vins.append(clean_vin)
 
     common_vins = labeling_vins.intersection(offers_vins)
