@@ -2244,16 +2244,6 @@ files = [
 ]
 
 [[package]]
-name = "sklearn"
-version = "0.0.post10"
-description = "deprecated sklearn package, use scikit-learn instead"
-optional = false
-python-versions = "*"
-files = [
-    {file = "sklearn-0.0.post10.tar.gz", hash = "sha256:d4cd5a2e64b3caaf82cd5e33c46884dfeec5ebf991710d9faeb4fe81cadb3ba6"},
-]
-
-[[package]]
 name = "smart-open"
 version = "6.4.0"
 description = "Utils for streaming large files (S3, HDFS, GCS, Azure Blob Storage, gzip, bz2...)"
@@ -2989,4 +2979,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "dac22bc1a7d48ac9689ff1101be77a018370167dbaa436bc9de23fa20fdd73d1"
+content-hash = "42e6933b3a22d1e8200c645f9d8887ca07e5ce745b499899f1a04e6a521c8715"
