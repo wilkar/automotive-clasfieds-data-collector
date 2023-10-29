@@ -9,10 +9,13 @@ jobs:
    steps:
     - uses: actions/checkout@v3
     - name: Build Docker image
-      run: docker build -t app .
+      run: docker-compose build app
     - name: Run isort
-      run: docker run app poetry run isort . --check --profile=black
+      run: docker-compose run app poetry run isort . --check --profile=black
     - name: Run black
-      run: docker run app poetry run black . --check
+      run: docker-compose run app poetry run black . --check
     - name: Run tests
-      run: docker run app poetry run pytest
+      run: docker-compose run app poetry run pytest
+    - name: Stop docker container
+      if: always()
+      run: docker-compose down
