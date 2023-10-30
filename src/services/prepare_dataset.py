@@ -29,4 +29,4 @@ def get_balanced_dataset(input_file: str, output_file: str):
         for offer in combined_list:
             csv_writer.writerow(offer)
 
-get_balanced_dataset("training_data.csv", "balanced_set.csv")
+get_balanced_dataset("scraped_data.csv", "balanced_set.csv")
