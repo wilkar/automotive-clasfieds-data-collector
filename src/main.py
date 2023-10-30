@@ -18,8 +18,8 @@ async def process():
     training_data_producer = BezwypadkoweTrainingDataProducer()
     otomoto_raw_offer_producer = OtomotoRawOfferProducer()
 
-    logger.info("Scraping labeling data")
-    vins = list(training_data_producer.get_offers())
+    # logger.info("Scraping labeling data")
+    # vins = list(training_data_producer.get_offers())
 
     logger.info("Scraping offer data from Olx data")
     olx_offers = list(olx_raw_offer_producer.get_offers())
@@ -31,15 +31,15 @@ async def process():
     offers = olx_offers
 
     # TODO: save offers to database
-    logger.info("Saving labeling data")
-    with open("labeling_data.csv", mode="w", newline="", encoding="utf-8") as file:
-        writer = csv.writer(file)
-        writer.writerow(["VIN"])
-        for vin in vins:
-            writer.writerow([vin.vin])
+    # logger.info("Saving labeling data")
+    # with open("labeling_data.csv", mode="w", newline="", encoding="utf-8") as file:
+    #     writer = csv.writer(file)
+    #     writer.writerow(["VIN"])
+    #     for vin in vins:
+    #         writer.writerow([vin.vin])
 
     logger.info("Saving offer data")
-    with open("offers.csv", mode="w", newline="", encoding="utf-8") as file:
+    with open("scraped_data.csv", mode="w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
         writer.writerow(
             [
