@@ -6,10 +6,8 @@ import requests
 from bs4 import BeautifulSoup
 
 from src.config import log_init
-from src.config.bezwypadkowe_net_config import (
-    BEZWYPADKOWE_MAIN_URL,
-    BEZWYPADKOWE_STARTING_POINT,
-)
+from src.config.bezwypadkowe_net_config import (BEZWYPADKOWE_MAIN_URL,
+                                                BEZWYPADKOWE_STARTING_POINT)
 from src.models.labeling import TrainingData
 from src.raw_offer_producer.base import BaseRawOfferProducer
 
@@ -71,7 +69,9 @@ class BezwypadkoweTrainingDataProducer(BaseRawOfferProducer):
 
     def get_offers(self) -> Iterator[TrainingData]:
         for brand in self._get_brands():
-            logger.info(f"Parsing brand {brand}")
+            brand_name_match = re.search(r"forumdisplay\.php/\d{1,3}-(.*?)\?", brand)
+            assert brand_name_match
+            logger.info(f"Parsing brand {brand_name_match.group(1)}")
             for brand_link in self._get_pagination_urls(self._url_builder(brand)):
                 content = self._get_response(brand_link)
                 container = content.find_all("a", {"class": "title"})

@@ -4,39 +4,47 @@ from datetime import datetime
 
 @dataclass(frozen=True, kw_only=True)
 class RawOfferLocation:
+    id: int
     region: str | None
     city: str | None
 
 
 @dataclass(frozen=True, kw_only=True)
 class RawOfferParameters:
-    model: str | None  # enum
-    price: str | None  # convert to Int and append currency #bi
-    engine_size: str | None  # convert to Int and appent unit
+    id: int
+    model: str | None
+    price: int | None
+    engine_size: str | None
     manufactured_year: str | None
-    engine_power: str | None  # convert to inte and append unit
-    petrol: str | None  # enum
-    car_body: str | None  # enum
-    milage: str | None  # convert to int append unit
+    engine_power: str | None
+    petrol: str | None
+    car_body: str | None
+    milage: int | None
     color: str | None
-    condition: str | None  # enum
-    transmission: str | None  # enum
-    drive: str | None  # enum
-    country_origin: str | None  # enum
+    condition: str | None
+    transmission: str | None
+    drive: str | None
+    country_origin: str | None
     righthanddrive: str | None
     vin: str | None
 
 
-# TODO define enums for some values
 @dataclass(frozen=True, kw_only=True)
 class RawOffer:
-    brand: str  # enum
+    brand: str
     id: int
     link: str
     title: str
     created_time: datetime | None
     description: str
-    image_links: list[str] | None  # saved as JSON in db
+    image_links: list[str] | None
     parameters: list[RawOfferParameters] = field(default_factory=list)
     location: list[RawOfferLocation] = field(default_factory=list)
     vin: str | None
+    scraped_time: datetime | None
+
+
+@dataclass(frozen=True, kw_only=True)
+class SuspiciousOffer:
+    suspicious_clasfieds_id: int
+    is_suspicious: bool

@@ -1,0 +1,53 @@
+import webbrowser
+
+OLX_CATEGORIES = {
+    181: "Alfa Romeon",
+    182: "Audi",
+    183: "BMW",
+    184: "Chevrolet",
+    185: "Chrysler",
+    186: "Citroën",
+    187: "Daewoo",
+    188: "Fiat",
+    189: "Ford",
+    190: "Honda",
+    191: "Hyundai",
+    192: "Kia",
+    193: "Lancia",
+    194: "Mazda",
+    195: "Mercedes-Benz",
+    196: "Mitsubishi",
+    197: "Nissan",
+    198: "Opel",
+    199: "Peugeot",
+    200: "Renault",
+    201: "Saab",
+    202: "Seat",
+    203: "Skoda",
+    204: "Subaru",
+    205: "Suzuki",
+    206: "Toyota",
+    207: "Volkswagen",
+    208: "Volvo",
+    296: "Rover",
+    1219: "Land Rover",
+    1221: "Jeep",
+    1257: "Polonez",
+    1337: "Smart",
+    1339: "MINI",
+    1341: "Porsche",
+    1343: "Dodge",
+    1345: "Jaguar",
+    1347: "Dacia",
+    1349: "Daihatsu",
+    1351: "Lexus",
+    1353: "Cadillac",
+    1554: "Infiniti",
+    1556: "Aixam",
+    1558: "SsangYong",
+}
+
+
+for id in OLX_CATEGORIES:
+    url = f"https://www.olx.pl/api/v1/offers/?offset=0&limit=10&category_id={id}&sort_by=created_at:desc&query=&user_id=23063449&owner_type="
+    webbrowser.open(url)

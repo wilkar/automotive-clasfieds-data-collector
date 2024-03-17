@@ -5,7 +5,7 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import AsyncEngine
 
 from alembic import context
-from src.repositories.db_schema import metadata_obj
+from src.models.db_schema import metadata_obj
 
 config = context.config
 target_metadata = metadata_obj

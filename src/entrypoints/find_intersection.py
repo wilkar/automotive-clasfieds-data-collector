@@ -26,7 +26,7 @@ def find_common_vins(labeling_data_file, offers_file) -> tuple[int, set[str], in
                     .replace("]", "")
                     .replace(" ", "")
                     .replace("'", "")
-                )  # not needed
+                )
                 offers_vins.append(clean_vin)
 
     common_vins = labeling_vins.intersection(offers_vins)
@@ -37,7 +37,7 @@ def find_common_vins(labeling_data_file, offers_file) -> tuple[int, set[str], in
 
 
 labeling_data_file = "labeling_data.csv"
-offers_file = "offers.csv"
+offers_file = "scraped_data.csv"
 
 (
     common_vins_count,

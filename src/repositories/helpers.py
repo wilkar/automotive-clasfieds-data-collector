@@ -4,4 +4,5 @@ from src.config.config_main import DB_URL
 
 
 def get_engine() -> AsyncEngine:
+    print(DB_URL)
     return create_async_engine(DB_URL, echo=True)

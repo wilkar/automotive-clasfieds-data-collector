@@ -1,15 +1,5 @@
-from sqlalchemy import (
-    JSON,
-    BigInteger,
-    Column,
-    DateTime,
-    Identity,
-    Integer,
-    MetaData,
-    String,
-    Table,
-    UniqueConstraint,
-)
+from sqlalchemy import (JSON, BigInteger, Boolean, Column, DateTime, Identity,
+                        Integer, MetaData, String, Table, UniqueConstraint)
 
 metadata_obj = MetaData()
 offers_base = Table(
@@ -65,4 +55,12 @@ labeling_data = Table(
     Column("id", Integer, Identity(start=0, cycle=True), primary_key=True),
     Column("vin", String, nullable=False),
     UniqueConstraint("vin", name="vin"),
+)
+
+suspicious_offers = Table(
+    "suspicious_offers",
+    metadata_obj,
+    Column("id", Integer, Identity(start=1, cycle=True), primary_key=True),
+    Column("suspicious_clasfieds_id", Integer, nullable=False),
+    Column("is_suspicious", Boolean, nullable=True),
 )
