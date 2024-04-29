@@ -1,5 +1,5 @@
 import os
-from distutils.util import strtobool
+from distutils.util import strtobool  # type: ignore
 from pathlib import Path
 
 

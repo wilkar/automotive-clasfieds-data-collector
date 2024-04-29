@@ -2,7 +2,7 @@ import logging
 from logging.config import dictConfig as dict_config
 from typing import TYPE_CHECKING
 
-from src.config.config_main import DEBUG_LOG
+from src.config.main_config import DEBUG_LOG
 
 if TYPE_CHECKING:
     from logging.config import _LoggerConfiguration

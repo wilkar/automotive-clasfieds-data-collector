@@ -23,9 +23,5 @@ General goal is to create an app that can continuosly collect data and flag frau
    
 ## TODO
 
-- Complete database setup
-- Add more data sources
-- Implement async in the whole project
 - Add tests
 - Add ML model
-- Add frontend for data visualisation

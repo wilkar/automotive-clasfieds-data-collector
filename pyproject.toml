@@ -47,6 +47,9 @@ nlp = "^0.4.0"
 lightgbm = "^4.3.0"
 matplotlib = "^3.8.3"
 seaborn = "^0.13.2"
+sentence-transformers = "^2.6.1"
+pandas-stubs = "^2.2.1.240316"
+types-seaborn = "^0.13.2.20240417"
 
 
 [build-system]

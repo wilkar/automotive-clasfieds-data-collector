@@ -6,9 +6,13 @@ import requests
 from dacite import from_dict
 
 from src.config import log_init
-from src.config.olx_config import (OLX_API_LIMIT, OLX_API_OFFSET,
-                                   OLX_API_PAGINATION_LIMIT, OLX_API_URL,
-                                   OLX_CATEGORIES)
+from src.config.olx_config import (
+    OLX_API_LIMIT,
+    OLX_API_OFFSET,
+    OLX_API_PAGINATION_LIMIT,
+    OLX_API_URL,
+    OLX_CATEGORIES,
+)
 from src.models.raw_offer import RawOffer, RawOfferLocation, RawOfferParameters
 from src.raw_offer_producer.base import BaseRawOfferProducer
 

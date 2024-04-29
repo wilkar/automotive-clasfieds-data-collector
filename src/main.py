@@ -1,11 +1,9 @@
 import logging
-from datetime import datetime, timezone
 
 from src.config import log_init
 from src.models.labeling import TrainingData
 from src.models.raw_offer import RawOffer, RawOfferLocation, RawOfferParameters
-from src.raw_offer_producer.bezwypadkowe_net import \
-    BezwypadkoweTrainingDataProducer
+from src.raw_offer_producer.bezwypadkowe_net import BezwypadkoweTrainingDataProducer
 from src.raw_offer_producer.olx import OlxRawOfferProducer
 from src.raw_offer_producer.otomoto import OtomotoRawOfferProducer
 from src.repositories.helpers import get_engine

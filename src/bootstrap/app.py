@@ -2,14 +2,19 @@ from dataclasses import dataclass
 
 from sqlalchemy.ext.asyncio import AsyncEngine
 
-from src.config.bezwypadkowe_net_config import (BEZWYPADKOWE_MAIN_URL,
-                                                BEZWYPADKOWE_STARTING_POINT)
-from src.config.olx_config import (OLX_API_LIMIT, OLX_API_OFFSET,
-                                   OLX_API_PAGINATION_LIMIT, OLX_API_URL,
-                                   OLX_CATEGORIES)
+from src.config.bezwypadkowe_net_config import (
+    BEZWYPADKOWE_MAIN_URL,
+    BEZWYPADKOWE_STARTING_POINT,
+)
+from src.config.olx_config import (
+    OLX_API_LIMIT,
+    OLX_API_OFFSET,
+    OLX_API_PAGINATION_LIMIT,
+    OLX_API_URL,
+    OLX_CATEGORIES,
+)
 from src.raw_offer_producer.base import BaseRawOfferProducer
-from src.raw_offer_producer.bezwypadkowe_net import \
-    BezwypadkoweTrainingDataProducer
+from src.raw_offer_producer.bezwypadkowe_net import BezwypadkoweTrainingDataProducer
 from src.raw_offer_producer.olx import OlxRawOfferProducer
 from src.raw_offer_producer.otomoto import OtomotoRawOfferProducer
 from src.repositories.helpers import get_engine

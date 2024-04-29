@@ -1,1 +1,4 @@
 __pycache__
+ml_models/
+plots/
+.DS_Store

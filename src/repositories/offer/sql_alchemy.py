@@ -4,10 +4,20 @@ from sqlalchemy import and_, func, join, select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncEngine
 
-from src.models.db_schema import (labeling_data, offer_location, offers_base,
-                                  offers_details, suspicious_offers)
-from src.models.raw_offer import (RawOffer, RawOfferLocation,
-                                  RawOfferParameters, SuspiciousOffer)
+from src.models.db_schema import (
+    labeling_data,
+    offer_location,
+    offers_base,
+    offers_details,
+    suspicious_offers,
+    suspicious_offers_v2,
+)
+from src.models.raw_offer import (
+    RawOffer,
+    RawOfferLocation,
+    RawOfferParameters,
+    SuspiciousOffer,
+)
 from src.repositories.helpers import get_engine
 from src.repositories.offer.base import OfferRepository
 
@@ -109,6 +119,7 @@ class SqlAlchemyOfferRepository(OfferRepository):
                 offers_base.c.clasfieds_id,
                 offers_base.c.title,
                 offers_base.c.description,
+                offers_base.c.vin,
                 offers_details.c.model,
                 offers_details.c.price,
                 offers_details.c.milage,
@@ -206,10 +217,66 @@ class SqlAlchemyOfferRepository(OfferRepository):
         ins = (
             insert(suspicious_offers)
             .values(
-                suspicious_clasfieds_id=suspicious_offer.suspicious_clasfieds_id,  # Corrected column name
+                suspicious_clasfieds_id=suspicious_offer.suspicious_clasfieds_id,
                 is_suspicious=suspicious_offer.is_suspicious,
             )
             .on_conflict_do_nothing()
         )
         async with self.engine.begin() as conn:
             await conn.execute(ins)
+
+    async def select_suspicious_offers_from_labeling_data(self):
+        subquery = select(labeling_data.c.vin).scalar_subquery()
+
+        query = (
+            select(
+                offers_base.c.clasfieds_id,
+                offers_base.c.title,
+                offers_base.c.description,
+                offers_details.c.model,
+                offers_details.c.price,
+                offers_details.c.milage,
+                offers_details.c.condition,
+                offers_details.c.country_origin,
+            )
+            .select_from(
+                offers_base.join(
+                    offers_details,
+                    offers_base.c.clasfieds_id == offers_details.c.clasfieds_id,
+                )
+            )
+            .where(offers_base.c.vin.in_(subquery))
+        )
+
+        async with self.engine.begin() as conn:
+            result = await conn.execute(query)
+            data = result.fetchall()
+            return data
+
+    async def add_suspicious_offer_v2(self, suspicious_offer: SuspiciousOffer) -> None:
+        ins = (
+            insert(suspicious_offers_v2)
+            .values(
+                suspicious_clasfieds_id=suspicious_offer.suspicious_clasfieds_id,
+                is_suspicious=suspicious_offer.is_suspicious,
+            )
+            .on_conflict_do_nothing()
+        )
+        async with self.engine.begin() as conn:
+            await conn.execute(ins)
+
+    async def select_all_suspicious_offers_v2(self):
+        query = select(suspicious_offers_v2)
+        async with self.engine.begin() as conn:
+            result = await conn.execute(query)
+            data = result.fetchall()
+            return data
+
+    async def select_single_suspicious_offer_v2(self, clasfieds_offer_id: int):
+        query = select(suspicious_offers_v2).where(
+            suspicious_offers.c.suspicious_clasfieds_id == clasfieds_offer_id
+        )
+        async with self.engine.begin() as conn:
+            result = await conn.execute(query)
+            data = result.fetchone()
+            return data
